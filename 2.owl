@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/epic/ontologies/2022/11/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/epic/ontologies/2022/11/untitled-ontology-5"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:practica3="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3">
+        <owl:imports rdf:resource="http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        <rdfs:comment>The WGS84 altitude of a SpatialThing (decimal meters 
+above the local reference ellipsoid).</rdfs:comment>
+        <rdfs:label>altitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:comment>The WGS84 latitude of a SpatialThing (decimal degrees).</rdfs:comment>
+        <rdfs:label>latitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/based_near"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        <rdfs:comment>The WGS84 longitude of a SpatialThing (decimal degrees).</rdfs:comment>
+        <rdfs:label>longitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/based_near -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/based_near"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#compraProducto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#compraProducto">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#productoEsCompradoPor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#esProductoDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#esProductoDe">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#tieneProductos"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#productoEsCompradoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#productoEsCompradoPor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#tieneProductos -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#tieneProductos">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cantidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cantidad">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#correo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#correo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#correoCliente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#correoCliente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#correoProveedor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#correoProveedor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cpCliente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cpCliente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cpProveedor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#cpProveedor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#direccion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#direccion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#direccionCliente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#direccionCliente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#direccionProveedor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#direccionProveedor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#nombre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#nombreCliente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#nombreCliente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#nombreProveedor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#nombreProveedor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#precio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#precio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#talla -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#talla">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#telefono -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#telefono">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#telefonoCliente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#telefonoCliente">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#telefonoProveedor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#telefonoProveedor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas-Abrigos"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas"/>
+        <dc:title xml:lang="es">Abrigos</dc:title>
+        <rdfs:label xml:lang="es">Abrigos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bombers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bombers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas-Bombers"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas"/>
+        <dc:title xml:lang="es">Bombers</dc:title>
+        <rdfs:label xml:lang="es">Bombers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Empresa"/>
+        <dc:creator xml:lang="es">Jacques Mendieta &amp; Raúl Pina</dc:creator>
+        <dc:date xml:lang="es">2022</dc:date>
+        <dc:description xml:lang="es">Somos TeamTWS, una empresa del sector textil especializado en ropa urbana.
+Team TWS recoge las últimas tendencias internacionales, las mezcla con las influencias que marca la calle y los clubs de moda, y las reinterpreta a su estilo para transformarlas en prendas cómodas y fáciles de llevar.</dc:description>
+        <dc:source xml:lang="es">info.outfitshop@email.com</dc:source>
+        <dc:title xml:lang="es">Carácter</dc:title>
+        <rdfs:label xml:lang="es">Carácter</rdfs:label>
+        <wgs84_pos:location xml:lang="es">Avinguda de l&apos;Universitat, 46900, Valencia, Comunidad Valenciana, España</wgs84_pos:location>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#EstiloUrbano"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudaderas"/>
+        <dc:title xml:lang="es">Cargos</dc:title>
+        <rdfs:label xml:lang="es">Cargos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas-Abrigos"/>
+        <dc:title xml:lang="es">Chaquetas</dc:title>
+        <rdfs:label xml:lang="es">Chaquetas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas-Abrigos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas-Abrigos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <dc:title xml:lang="es">Chaquetas y Abrigos</dc:title>
+        <rdfs:label xml:lang="es">Chaquetas y Abrigos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Empresa"/>
+        <dc:title xml:lang="es">Clientes Registrados</dc:title>
+        <rdfs:label xml:lang="es">Clientes Registrados</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Empresa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Empresa">
+        <dc:title xml:lang="es">OutfitShop</dc:title>
+        <rdfs:label xml:lang="es">OutfitShop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#EstiloUrbano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#EstiloUrbano">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <dc:title xml:lang="es">Estilo Urbano</dc:title>
+        <rdfs:label xml:lang="es">Estilo Urbano</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas-Bombers"/>
+        <dc:title xml:lang="es">Parkas</dc:title>
+        <rdfs:label xml:lang="es">Parkas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas-Bombers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas-Bombers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+        <dc:title xml:lang="es">Parkas y Bombers</dc:title>
+        <rdfs:label xml:lang="es">Parkas y Bombers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Empresa"/>
+        <dc:title xml:lang="es">Productos</dc:title>
+        <rdfs:label xml:lang="es">Productos</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Empresa"/>
+        <dc:title xml:lang="es">Proveedores</dc:title>
+        <rdfs:label xml:lang="es">Proveedores</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudaderas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudaderas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#EstiloUrbano"/>
+        <dc:title xml:lang="es">Sudaderas</dc:title>
+        <rdfs:label xml:lang="es">Sudaderas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Point -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:comment> 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  </rdfs:comment>
+        <rdfs:comment>A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  </rdfs:comment>
+        <rdfs:label>point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">
+        <rdfs:comment>Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes.
+</rdfs:comment>
+        <rdfs:label>SpatialThing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigo1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigo1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigos"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor1"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abrigo Piel Mujer Color Marrón</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bombers"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor1"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bomber Hombre Color Verde</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bombers"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor1"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bomber Mujer Color Azul Marino</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">26.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargo1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargo1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargos"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor1"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cargo Pantalón Hombre Color Negro</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaqueta1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaqueta1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor2"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chaqueta Plumas Mujer Color Blanco</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cliente1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cliente1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigo1"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber1"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber2"/>
+        <practica3:correoCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cliente1@email.com</practica3:correoCliente>
+        <practica3:cpCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#int">46900</practica3:cpCliente>
+        <practica3:direccionCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calle Cliente1 1,1</practica3:direccionCliente>
+        <practica3:nombreCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cliente 1</practica3:nombreCliente>
+        <practica3:telefonoCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#int">123456789</practica3:telefonoCliente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cliente2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cliente2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargo1"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaqueta1"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka1"/>
+        <practica3:correoCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cliente2@email.com</practica3:correoCliente>
+        <practica3:cpCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#int">46900</practica3:cpCliente>
+        <practica3:direccionCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avenida Cliente2 2,2</practica3:direccionCliente>
+        <practica3:nombreCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cliente 2</practica3:nombreCliente>
+        <practica3:telefonoCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#int">987654321</practica3:telefonoCliente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cliente3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cliente3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka2"/>
+        <practica3:compraProducto rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudadera1"/>
+        <practica3:correoCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cliente3@email.com</practica3:correoCliente>
+        <practica3:cpCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#int">46900</practica3:cpCliente>
+        <practica3:direccionCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calle Cliente3 3,3</practica3:direccionCliente>
+        <practica3:nombreCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cliente 3</practica3:nombreCliente>
+        <practica3:telefonoCliente rdf:datatype="http://www.w3.org/2001/XMLSchema#int">123987456</practica3:telefonoCliente>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor2"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">19</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parka Hombre Color Verde</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">69.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor2"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parka Mujer Color Verde</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">49.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Abrigo1"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber1"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Bomber2"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Cargo1"/>
+        <practica3:correoProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proveedor1@email.com</practica3:correoProveedor>
+        <practica3:cpProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#int">28000</practica3:cpProveedor>
+        <practica3:direccionProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polígono proveedor 1</practica3:direccionProveedor>
+        <practica3:nombreProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proveedor 1</practica3:nombreProveedor>
+        <practica3:telefonoProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#int">456123789</practica3:telefonoProveedor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaqueta1"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka1"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parka2"/>
+        <practica3:tieneProductos rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudadera1"/>
+        <practica3:correoProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proveedor2@email.com</practica3:correoProveedor>
+        <practica3:cpProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#int">31000</practica3:cpProveedor>
+        <practica3:direccionProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polígono Proveedor 2</practica3:direccionProveedor>
+        <practica3:nombreProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proveedor 2</practica3:nombreProveedor>
+        <practica3:telefonoProveedor rdf:datatype="http://www.w3.org/2001/XMLSchema#int">999888777</practica3:telefonoProveedor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudadera1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudadera1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Sudaderas"/>
+        <practica3:esProductoDe rdf:resource="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedor2"/>
+        <practica3:cantidad rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</practica3:cantidad>
+        <practica3:nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sudedera Hombre Color Gris</practica3:nombre>
+        <practica3:precio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">30.0</practica3:precio>
+        <practica3:talla rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S-XL</practica3:talla>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#">
+        <dc:date>$Date: 2009/04/20 15:00:30 $</dc:date>
+        <rdfs:label>geo</rdfs:label>
+        <dc:description>A vocabulary for representing latitude, longitude and 
+ altitude information in the WGS84 geodetic reference datum. 
+ Version $Id: wgs84_pos.rdf,v 1.22 2009/04/20 15:00:30 timbl Exp $. See http://www.w3.org/2003/01/geo/ for more details.</dc:description>
+        <rdfs:comment>
+Recent changes to this namespace:
+$Log: wgs84_pos.rdf,v $
+Revision 1.22  2009/04/20 15:00:30  timbl
+Remove the time bits which have been deal with elsewhere eg in iCal.
+
+Revision 1.21  2009/04/20 12:52:47  timbl
+try again
+
+Revision 1.20  2009/04/20 12:42:11  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.19  2009/04/20 12:36:31  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.18  2006/02/01 22:01:04  danbri
+Clarified that lat and long are decimal degrees, and that alt is decimal metres about local reference ellipsoid
+
+Revision 1.17  2004/02/06 17:38:12  danbri
+Fixed a bad commit screwup
+
+Revision 1.15  2003/04/19 11:24:08  danbri
+Fixed the typo even more.
+
+Revision 1.14  2003/04/19 11:16:56  danbri
+fixed a typo
+
+Revision 1.13  2003/02/19 22:27:27  connolly
+relaxed domain constraints on lat/long/alt from Point to SpatialThing
+
+Revision 1.12  2003/01/12 01:41:41  danbri
+Trying local copy of XSLT doc.
+
+Revision 1.11  2003/01/12 01:20:18  danbri
+added a link to morten&apos;s xslt rdfs viewer.
+
+Revision 1.10  2003/01/11 18:56:49  danbri
+Removed datatype range from lat and long properties, since they would
+have required each occurance of the property to mention the datatype.
+
+Revision 1.9  2003/01/11 11:41:31  danbri
+Another typo; repaired rdfs:Property to rdf:Property x4
+
+Revision 1.8  2003/01/11 11:05:02  danbri
+Added an rdfs:range for each lat/long/alt property,
+http://www.w3.org/2001/XMLSchema#float
+
+Revision 1.7  2003/01/10 20:25:16  danbri
+Longer rdfs:comment for Point, trying to be Earth-centric and neutral about
+coordinate system(s) at the same time. Feedback welcomed.
+
+Revision 1.6  2003/01/10 20:18:30  danbri
+Added CVS log comments into the RDF/XML as an rdfs:comment property of the
+vocabulary. Note that this is not common practice (but seems both harmless
+and potentially useful).
+
+
+revision 1.5
+date: 2003/01/10 20:14:31;  author: danbri;  state: Exp;  lines: +16 -5
+Updated schema:
+Added a dc:date, added url for more info. Changed the rdfs:label of the
+namespace from gp to geo. Added a class Point, set as the rdfs:domain of
+each property. Added XML comment on the lat_long property suggesting that
+we might not need it (based on #rdfig commentary from implementors).
+
+revision 1.4
+date: 2003/01/10 20:01:07;  author: danbri;  state: Exp;  lines: +6 -5
+Fixed typo; several rdfs:about attributes are now rdf:about. Thanks to MortenF in
+#rdfig for catching this error.
+
+revision 1.3
+date: 2003/01/10 11:59:03;  author: danbri;  state: Exp;  lines: +4 -3
+fixed buglet in vocab, added more wgs links
+
+revision 1.2
+date: 2003/01/10 11:01:11;  author: danbri;  state: Exp;  lines: +4 -4
+Removed alt from the as-a-flat-string property, and switched from
+space separated to comma separated.
+
+revision 1.1
+date: 2003/01/10 10:53:23;  author: danbri;  state: Exp;
+basic geo vocab
+
+</rdfs:comment>
+        <dc:title>WGS84 Geo Positioning: an RDF vocabulary</dc:title>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat_long">
+        <rdfs:comment>A comma-separated representation of a latitude, longitude coordinate.</rdfs:comment>
+        <rdfs:label>lat/long</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:label>location</rdfs:label>
+        <rdfs:comment>The relation between something and the point, 
+ or other geometrical thing in space, where it is.  For example, the realtionship between
+ a radio tower and a Point with a given lat and long.
+ Or a relationship between a park and its outline as a closed arc of points, or a road and
+ its location as a arc (a sequence of points).
+ Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
+ an accuracy appropriate for the size of the object and uses such as mapping .
+ </rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Caracter"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#ClientesRegistrados"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Productos"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Proveedores"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Chaquetas-Abrigos"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#EstiloUrbano"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/practica3/ontologies/2022/11/practica3#Parkas-Bombers"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
